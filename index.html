@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TOM TONG TUK TOUD TIT</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome (icon library) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://ibb.co/qMWbJNwd" alt="โลโก้ร้าน">
+        <span>TOM TONG TUK TOUD TIT</span>
+      </div>
+      <ul class="menu">
+        <li><a href="#">หน้าแรก</a></li>
+        <li><a href="#products">สินค้า</a></li>
+        <li><a href="#contact">ติดต่อ</a></li>
+      </ul>
+    </nav>
+  
+    <div class="header-content">
+      <h1 class="fade-in">🍃 ต้มตองตักตูดติด 🍂</h1>
+      <p class="fade-in">ของเด็ดประจำหมู่บ้านที่ต้องลอง!</p>
+    </div>
+  </header>
+
+  <section class="products" id="products">
+    <h2 class="section-title">สินค้าแนะนำ</h2>
+    <div class="product-grid">
+      
+      <div class="product-card">
+        <img src="https://ibb.co/qMWbJNwd" alt="☘️+🍒">
+        <h3>☘️+🍒</h3>
+        <p>ราคา 170.000 KIP</p>
+        <a href="#" class="order-btn" onclick="confirmOrder('☘️+🍒', 'https://www.facebook.com/topee.ptv')">
+          <i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
+        </a>
+      </div>
+  
+      <div class="product-card">
+        <img src="https://image.made-in-china.com/2f0j00CeJVgwyzlDGW/Pilot-PRO-6000-Puffs-Mini-Disposable-Vape-Pod.webp" alt="Pilot Vape">
+        <h3>Pilot Vape</h3>
+        <p>ราคา 170.000 KIP</p>
+        <a href="#" class="order-btn" onclick="confirmOrder('Pilot Vape', 'https://www.facebook.com/topee.ptv')">
+          <i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
+        </a>
+      </div>
+  
+      <div class="product-card">
+        <img src="https://www.dangkhoavapestore.com/cdn/shop/files/462553269_945258124120461_2275636186648301760_n.jpg?v=1731430745&width=1445" alt="Super Ice 10ML">
+        <h3>Super Ice 10ML</h3>
+        <p>ราคา 70.000 KIP</p>
+        <a href="#" class="order-btn" onclick="confirmOrder('Super Ice 10ML', 'https://www.facebook.com/vongphet.ssbd')">
+          <i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
+        </a>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <footer class="contact" id="contact">
+    <p>ติดต่อ: Facebook: Vongphet Ssbd & Topee Ptv | โทร: +84916112722</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+    function confirmOrder(productName, link) {
+      const confirmText = `คุณต้องการสั่งซื้อ "${productName}" ผ่าน Facebook Messenger ใช่ไหม?`;
+      if (confirm(confirmText)) {
+        window.open(link, '_blank');
+      }
+    }
+  </script>  
+
+</body>
+</html>
