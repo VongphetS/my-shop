@@ -158,7 +158,7 @@
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="logo.png" alt="โลโก้ร้าน">
+        <img src="logo2.png" alt="โลโก้ร้าน">
         <span>TOM TONG TUK TOUD TIT</span>
       </div>
       <ul class="menu">
@@ -170,7 +170,7 @@
   </header>
 
   <div class="promo-bar">
-    <div class="promo-text">🔥 โปรโมชั่นพิเศษ! สั่งครบ 500KIP ส่งฟรีทั่วประเทศ 🔥</div>
+    <div class="promo-text" id="promoText"></div>
   </div>
 
   <section id="products">
@@ -215,6 +215,38 @@
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png" alt="Zalo">
     </a>
   </div>
+
+  <script>
+    const promoTextElement = document.getElementById('promoText');
+    const messages = [
+      "🔥 โปรโมชั่นพิเศษ! สั่งครบ 500KIP ส่งฟรีทั่วประเทศ 🔥",
+      "😍 สินค้าดีมีคุณภาพ ราคาน่ารัก! 😍",
+      "🍃 ของเด็ดประจำหมู่บ้านต้องลอง! 🍃"
+    ];
+    let currentMessageIndex = 0;
+    let animationDuration = 20; // Base duration in seconds
+    let extraDelay = 5; // Extra delay before starting next animation
+
+    function updatePromoText() {
+      promoTextElement.style.animationDuration = '0s'; // Stop animation briefly
+      promoTextElement.style.left = '-20%'; // Reset position
+      promoTextElement.textContent = messages[currentMessageIndex]; // Change text
+
+      // Force reflow to apply changes immediately
+      void promoTextElement.offsetWidth;
+
+      promoTextElement.style.animationDuration = `${animationDuration}s`; // Restart animation
+
+      currentMessageIndex = (currentMessageIndex + 1) % messages.length; // Cycle to next message
+
+      // Calculate the total time before the next update
+      let totalDelay = (animationDuration + extraDelay) * 1000;
+      setTimeout(updatePromoText, totalDelay);
+    }
+
+    // Initial call to start the cycle
+    updatePromoText();
+  </script>
 
 </body>
 </html>
