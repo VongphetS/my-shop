@@ -4,8 +4,154 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TOM TONG TUK TOUD TIT</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #121212;
+      color: #fff;
+    }
+    header {
+      background: #1f1f1f;
+      padding: 20px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .menu a:hover {
+      color: #ffcc00;
+    }
+    .promo-bar {
+      background: #ffcc00;
+      color: #000;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+    .promo-text {
+      display: inline-block;
+      position: absolute;
+      left: -100%;
+      animation: scrollLeftToRight 20s linear infinite;
+      font-weight: bold;
+    }
+    @keyframes scrollLeftToRight {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    .hero-banner img {
+      width: 100%;
+      display: block;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.5em;
+      margin: 50px 0 20px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 0 20px 60px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .product-card {
+      background: #2c2c2c;
+      border-radius: 15px;
+      overflow: hidden;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+    .product-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .product-card h3 {
+      margin: 15px 0 5px;
+    }
+    .product-card p {
+      color: #ccc;
+    }
+    .order-btn {
+      display: inline-block;
+      background: #ffcc00;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin-top: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .order-btn:hover {
+      background: #ffaa00;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1f1f1f;
+      color: #ccc;
+    }
+    .sticky-contact {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 60px;
+    }
+    .sticky-contact img {
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
 <body>
 
@@ -21,63 +167,58 @@
         <li><a href="#contact">ติดต่อ</a></li>
       </ul>
     </nav>
-    <div class="header-content">
-      <h1 class="fade-in">🍃 ต้มตองตักตูดติด 🍂</h1>
-      <p class="fade-in">ของเด็ดประจำหมู่บ้านที่ต้องลอง!</p>
-    </div>
   </header>
 
-  <section class="products" id="products">
+  <div class="promo-bar">
+    <div class="promo-text">🔥 โปรโมชั่นพิเศษ! สั่งครบ 500KIP ส่งฟรีทั่วประเทศ 🔥</div>
+  </div>
+
+  <div class="hero-banner">
+    <img src="banner.png" alt="โปรโมชั่น">
+  </div>
+
+  <section id="products">
     <h2 class="section-title">สินค้าแนะนำ</h2>
     <div class="product-grid">
-      <div class="product-card wow">
+      <div class="product-card">
         <img src="logo.png" alt="☘️+🍒">
         <h3>☘️+🍒</h3>
         <p>ราคา 170.000 KIP</p>
-        <a href="#" class="order-btn" onclick="confirmOrder('☘️+🍒', 'https://www.facebook.com/topee.ptv')">
+        <a href="https://www.facebook.com/topee.ptv" target="_blank" class="order-btn">
           <i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
         </a>
       </div>
-      <div class="product-card wow">
+      <div class="product-card">
         <img src="https://image.made-in-china.com/2f0j00CeJVgwyzlDGW/Pilot-PRO-6000-Puffs-Mini-Disposable-Vape-Pod.webp" alt="Pilot Vape">
         <h3>Pilot Vape</h3>
         <p>ราคา 170.000 KIP</p>
-        <a href="#" class="order-btn" onclick="confirmOrder('Pilot Vape', 'https://www.facebook.com/topee.ptv')">
+        <a href="https://www.facebook.com/topee.ptv" target="_blank" class="order-btn">
           <i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
         </a>
       </div>
-      <div class="product-card wow">
+      <div class="product-card">
         <img src="https://www.dangkhoavapestore.com/cdn/shop/files/462553269_945258124120461_2275636186648301760_n.jpg?v=1731430745&width=1445" alt="Super Ice 10ML">
         <h3>Super Ice 10ML</h3>
         <p>ราคา 70.000 KIP</p>
-        <a href="#" class="order-btn" onclick="confirmOrder('Super Ice 10ML', 'https://www.facebook.com/vongphet.ssbd')">
+        <a href="https://www.facebook.com/vongphet.ssbd" target="_blank" class="order-btn">
           <i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
         </a>
       </div>
     </div>
   </section>
 
-  <footer class="contact" id="contact">
+  <footer id="contact">
     <p>ติดต่อ: Facebook: Vongphet Ssbd & Topee Ptv | โทร: +84916112722</p>
   </footer>
 
-  <script>
-    function confirmOrder(productName, link) {
-      const confirmText = `คุณต้องการสั่งซื้อ "${productName}" ผ่าน Facebook Messenger ใช่ไหม?`;
-      if (confirm(confirmText)) {
-        window.open(link, '_blank');
-      }
-    }
+  <div class="sticky-contact">
+    <a href="https://line.me/ti/p/yourID" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124027.png" alt="Line">
+    </a>
+    <a href="https://zalo.me/0916112722" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png" alt="Zalo">
+    </a>
+  </div>
 
-    // ลูกเล่น: fade-in ตอน scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    });
-    document.querySelectorAll('.wow').forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
