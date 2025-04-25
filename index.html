@@ -1,13 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TOM TONG TUK TOUD TIT</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TOM TONG TUK TOUD TIT</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Kanit&amp;display=swap" rel="stylesheet"/>
+<style>
     body {
       font-family: 'Kanit', sans-serif;
       margin: 0;
@@ -21,6 +22,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      overflow: hidden;
+      animation: slideDown 1s ease-out;
     }
     .navbar {
       display: flex;
@@ -52,6 +55,26 @@
     }
     .menu a:hover {
       color: #ffcc00;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .fade-in {
+      animation: fadeIn 2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .wow {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    .wow.active {
+      opacity: 1;
+      transform: translateY(0);
     }
     .promo-bar {
       background: #ffcc00;
@@ -151,77 +174,73 @@
       border-radius: 50%;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
-
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="logo2.png" alt="โลโก้ร้าน">
-        <span>TOM TONG TUK TOUD TIT</span>
-      </div>
-      <ul class="menu">
-        <li><a href="#">หน้าแรก</a></li>
-        <li><a href="#products">สินค้า</a></li>
-        <li><a href="#contact">ติดต่อ</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="promo-bar">
-    <div class="promo-text" id="promoText"></div>
-  </div>
-
-  <section id="products">
-    <h2 class="section-title">สินค้าแนะนำ</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="logo.png" alt="☘️+🍒">
-        <h3>☘️+🍒</h3>
-        <p>ราคา 170.000 KIP</p>
-        <a href="https://www.facebook.com/topee.ptv" target="_blank" class="order-btn">
-          <i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
+<header>
+<nav class="navbar">
+<div class="logo">
+<img alt="โลโก้ร้าน" src="logo2.png"/>
+<span>TOM TONG TUK TOUD TIT</span>
+</div>
+<ul class="menu">
+<li><a href="#">หน้าแรก</a></li>
+<li><a href="#products">สินค้า</a></li>
+<li><a href="#contact">ติดต่อ</a></li>
+</ul>
+</nav>
+</header>
+<div class="promo-bar">
+<div class="promo-text" id="promoText"></div>
+</div>
+<section id="products">
+<h2 class="section-title">สินค้าแนะนำ</h2>
+<div class="product-grid">
+<div class="product-card wow">
+<img alt="☘️+🍒" src="logo.png"/>
+<h3>☘️+🍒</h3>
+<p>ราคา 170.000 KIP</p>
+<a class="order-btn" href="#" onclick="return confirmOrder('☘️+🍒', 'https://www.facebook.com/topee.ptv')" target="_blank">
+<i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
         </a>
-      </div>
-      <div class="product-card">
-        <img src="https://image.made-in-china.com/2f0j00CeJVgwyzlDGW/Pilot-PRO-6000-Puffs-Mini-Disposable-Vape-Pod.webp" alt="Pilot Vape">
-        <h3>Pilot Vape</h3>
-        <p>ราคา 170.000 KIP</p>
-        <a href="https://www.facebook.com/topee.ptv" target="_blank" class="order-btn">
-          <i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
+</div>
+<div class="product-card wow">
+<img alt="Pilot Vape" src="https://image.made-in-china.com/2f0j00CeJVgwyzlDGW/Pilot-PRO-6000-Puffs-Mini-Disposable-Vape-Pod.webp"/>
+<h3>Pilot Vape</h3>
+<p>ราคา 170.000 KIP</p>
+<a class="order-btn" href="#" onclick="return confirmOrder('Pilot Vape', 'https://www.facebook.com/topee.ptv')" target="_blank">
+<i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
         </a>
-      </div>
-      <div class="product-card">
-        <img src="https://www.dangkhoavapestore.com/cdn/shop/files/462553269_945258124120461_2275636186648301760_n.jpg?v=1731430745&width=1445" alt="Super Ice 10ML">
-        <h3>Super Ice 10ML</h3>
-        <p>ราคา 70.000 KIP</p>
-        <a href="https://www.facebook.com/vongphet.ssbd" target="_blank" class="order-btn">
-          <i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
+</div>
+<div class="product-card wow">
+<img alt="Super Ice 10ML" src="https://www.dangkhoavapestore.com/cdn/shop/files/462553269_945258124120461_2275636186648301760_n.jpg?v=1731430745&amp;width=1445"/>
+<h3>Super Ice 10ML</h3>
+<p>ราคา 70.000 KIP</p>
+<a class="order-btn" href="#" onclick="return confirmOrder('Super Ice 10ML', 'https://www.facebook.com/vongphet.ssbd')" target="_blank">
+<i class="fab fa-facebook-messenger"></i> สั่งซื้อทาง Facebook
         </a>
-      </div>
-    </div>
-  </section>
+</div>
+</div>
+</section>
+<footer id="contact">
+<p>ติดต่อ: Facebook: Vongphet Ssbd &amp; Topee Ptv | โทร: +84916112722</p>
+</footer>
+<div class="sticky-contact">
+<a href="https://line.me/ti/p/yourID" target="_blank">
+<img alt="Line" src="https://cdn-icons-png.flaticon.com/512/124/124027.png"/>
+</a>
+<a href="https://zalo.me/0916112722" target="_blank">
+<img alt="Zalo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png"/>
+</a>
+</div>
 
-  <footer id="contact">
-    <p>ติดต่อ: Facebook: Vongphet Ssbd & Topee Ptv | โทร: +84916112722</p>
-  </footer>
-
-  <div class="sticky-contact">
-    <a href="https://line.me/ti/p/yourID" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/124/124027.png" alt="Line">
-    </a>
-    <a href="https://zalo.me/0916112722" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png" alt="Zalo">
-    </a>
-  </div>
-
-  <script>
+<script>
     const promoTextElement = document.getElementById('promoText');
     const messages = [
-      "🔥 โปรโมชั่นพิเศษ! สั่งครบ 500KIP ส่งฟรีทั่วประเทศ 🔥",
-      "😍 สินค้าดีมีคุณภาพ ราคาน่ารัก! 😍",
-      "🍃 ของเด็ดประจำหมู่บ้านต้องลอง! 🍃"
+      "🔥 โปรโมชั่นพิเศษ! สั่งครบ 500KIP ส่งฟรีทั่วประเทศ 🔥", "😍 สินค้าดีมีคุณภาพ ราคาน่ารัก! 😍", "🍃 ของเด็ดประจำหมู่บ้านต้องลอง! 🍃"
     ];
     let currentMessageIndex = 0;
     let animationDuration = 20; // Base duration in seconds
@@ -229,7 +248,7 @@
 
     function updatePromoText() {
       promoTextElement.style.animationDuration = '0s'; // Stop animation briefly
-      promoTextElement.style.left = '-20%'; // Reset position
+      promoTextElement.style.left = '0%'; // Reset position
       promoTextElement.textContent = messages[currentMessageIndex]; // Change text
 
       // Force reflow to apply changes immediately
@@ -247,6 +266,13 @@
     // Initial call to start the cycle
     updatePromoText();
   </script>
-
-</body>
+<script>
+function confirmOrder(productName, link) {
+  const confirmText = `คุณต้องการสั่งซื้อ "${productName}" ผ่าน Facebook Messenger ใช่ไหม?`;
+  if (confirm(confirmText)) {
+    window.open(link, '_blank');
+  }
+  return false; // ป้องกันการกระตุกหน้า
+}
+</script></body>
 </html>
