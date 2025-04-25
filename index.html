@@ -236,7 +236,6 @@
 <img alt="Zalo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/1024px-Icon_of_Zalo.svg.png"/>
 </a>
 </div>
-
 <script>
     const promoTextElement = document.getElementById('promoText');
     const messages = [
@@ -274,5 +273,14 @@ function confirmOrder(productName, link) {
   }
   return false; // ป้องกันการกระตุกหน้า
 }
+</script><script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+});
+document.querySelectorAll('.wow').forEach(el => observer.observe(el));
 </script></body>
 </html>
